@@ -1,10 +1,15 @@
-
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+from users.users_data import UsersData
 
 class UserView(APIView):
     def get(self, request, user_id):
-        users = {"1": "Alice", "2": "Bob", "3": "Charlie"}
+        users_db = UsersData()
 
-        return Response({"user_id": user_id, "name": users.get(user_id, "Unknown")})
+        result = {
+                    "user_id": user_id,
+                    "name": users_db.get_user(user_id)
+                  }
+        return Response(result)
+
