@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'orders.apps.OrdersConfig',
 ]
 
@@ -120,5 +121,12 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+
+try:
+    from .constants import *
+except ImportError:
+    pass
+
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

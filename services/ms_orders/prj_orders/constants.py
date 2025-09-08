@@ -1,0 +1,1 @@
+URL_MS_USERS = "http://localhost:8000/users"
