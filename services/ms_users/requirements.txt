@@ -6,3 +6,4 @@ djangorestframework==3.16.1
 sqlparse==0.5.3
 
 # branch_001_create_basic_app_for_ms
+# branch_002_create_auth_app
